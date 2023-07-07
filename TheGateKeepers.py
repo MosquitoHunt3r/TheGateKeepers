@@ -6,22 +6,22 @@ def interview():
 	global name
 	global max
 	cs()
-	prin("\nHi! What's your name?")
+	prin("Hi! What's your name?")
 	slp(1)
 	name = input("(Don't enter a name if you're feeling timid)\n\n")
 	if name != "" and name != " ":
 		cs()
-		prin(f"\nGood luck with the gatekeepers {name}! I hear barely anybody passes them....\n\n")
+		prin(f"Good luck with the gatekeepers {name}! I hear barely anybody passes them....\n\n")
 		slp(1)
 		questions = select_different_role()
 	else:
 		cs()
 		name = random.choice(users)
-		prin(f"\nShy for an interview? Oh well, I'll just call you {name} for now.\n\n")
+		prin(f"Shy for an interview? Oh well, I'll just call you {name} for now.\n\n")
 		slp(1)
 		questions = select_different_role()
 	cs()
-	prin(f"\nMy name is {interviewer}, and I'll be your interviewer. Thank you for applying for this position, {name}. I really liked your CV and you seem like a really strong candidate! Just need to ask you a couple of questions to make sure you're the real deal and not just some {fake}!\n")
+	prin(f"My name is {interviewer}, and I'll be your interviewer. Thank you for applying for this position, {name}. I really liked your CV and you seem like a really strong candidate! Just need to ask you a couple of questions to make sure you're the real deal and not just some {fake}!\n")
 	start_test(questions)
 
 def select_different_role():
@@ -47,22 +47,22 @@ def select_different_role():
 				elif a == 2:
 					while True:
 						cs()
-						pro = input("\nRole:\n\n")
+						pro = input("Role:\n\n")
 						fake = "fake " + pro
 						fake = validate(fake)
 						if fake != "":
 							while True:
 								try:
 									cs()
-									b = input("\nQuestion & answer file:\n\n")
+									b = input("Question & answer file:\n\n")
 									if not os.path.isfile(b):
 										raise FileNotFoundError
 									else:
 										cs()
-										prin("\nFound your file!")
+										prin("Found your file!")
 										slp(2)
 									cs()
-									prin(f"\nHere's a quick tip before your interview:\n\n{tips}")
+									prin(f"Here's a quick tip before your interview:\n\n{tips}")
 									slp(2)
 									w()
 									break
@@ -126,35 +126,34 @@ def start_test(questions):
 
 def begin():
 	while True:
-		start = input("\nAre you ready for your interview questions? (y/n)\n\n").lower()
+		start = input("Are you ready for your interview questions? (y/n)\n\n").lower()
 		if start == "y":
 			prin("\n\nGreat! Let's get to it then!")
-			slp(1)
-			w()
+			slp(1.5)
 			while True:
 				try:
 					cs()
-					qs = input(f"\nHow many questions can you handle? (max: {max})\n\n")
+					qs = input(f"How many questions can you handle? (max: {max})\n\n")
 					if validate(qs) == "":
 						slp(2)
 					qs = int(qs)
 					if qs < 1 or qs > int(max):
 						cs()
-						prin("\nAt least you have a sense of humor... but it'll cost you this job. Please give a valid numer so that we can begin. (1-159)\n")
+						prin("At least you have a sense of humor... but it'll cost you this job. Please give a valid numer so that we can begin. (1-159)\n")
 						slp(2)
 					elif qs < 10:
 						cs()
-						prin("\nHmm.. Seems this will be quick!\n")
+						prin("Hmm.. Seems this will be quick!\n")
 						slp(2)
 						return qs
 					elif qs >= 10 and qs < 40:
 						cs()
-						prin("\nThat seems like a decent amount of questions! 10+ points to you! (Just kidding)\n")
+						prin("That seems like a decent amount of questions! 10+ points to you! (Just kidding)\n")
 						slp(2)
 						return qs
 					elif qs > 40:
 						cs()
-						prin("\nYou know making me tired from asking so many questions isn't going to land you this job, right?\n")
+						prin("You know making me tired from asking so many questions isn't going to land you this job, right?\n")
 						slp(2)
 						return qs
 				except ValueError:
@@ -162,7 +161,7 @@ def begin():
 					slp(2)
 		elif start == "n":
 			cs()
-			prin(f"\nNo worries, I already knew you were a {fake}, I just wanted to see it in person! Bye!\n")
+			prin(f"No worries, I already knew you were a {fake}, I just wanted to see it in person! Bye!\n")
 			quit()
 		else:
 			prin("\nInterview didn't start and you're already having trouble? Please give a valid answer.\n")
@@ -187,22 +186,22 @@ def tests(questions): #Generates a test based on the amount of questions the use
 	# Generate questions to user and save responses to dictionary
 	q = 1
 	for num in range(i):
-		test["s"+str(q)] = input("\n"+str(q) + ". " + test["q"+str(q)] + "\n")
+		test["s"+str(q)] = input(""+str(q) + ". " + test["q"+str(q)] + "\n")
 		q +=1
 		cs()
 	# Ask if user wants to check their results
 	if int(n_questions) < 10:
-		prin("\nHey, I told you this would be quick!")
+		prin("Hey, I told you this would be quick!")
 		w()
 	elif int(n_questions) > 10 and int(n_questions) < 40:
-		prin("\nGood job! That was quite a few questions!")
+		prin("Good job! That was quite a few questions!")
 		w()
 	elif int(n_questions) > 40:
-		prin("\nThat was insane. I'm traumatized about giving interviews because of you.")
+		prin("That was insane. I'm traumatized about giving interviews because of you.")
 		w()
 	while True:
 		cs()
-		a = input("\nDo you want to check your results? (y/n)\n\n").lower()
+		a = input("Do you want to check your results? (y/n)\n\n").lower()
 		validate(a)
 		if a == "n":
 			prin("\nGuess we'll never know if you're worth it or not!")
@@ -210,7 +209,7 @@ def tests(questions): #Generates a test based on the amount of questions the use
 			try:
 				while True:
 					cs()
-					ask = input("\nWhat do you want to do?\n1. New interview\n2. Exit and cry\n\n")
+					ask = input("What do you want to do?\n1. New interview\n2. Exit and cry\n\n")
 					if validate(ask) == "":
 						slp(2)
 					ask = int(ask)
@@ -221,7 +220,7 @@ def tests(questions): #Generates a test based on the amount of questions the use
 						start_test(questions)
 					elif ask == 2:
 						cs()
-						prin("\nOh well... If you ever need anything, you know who to count on!")
+						prin("Oh well... If you ever need anything, you know who to count on!")
 						slp(2)
 						prin("\n\nThe police or something, please don't count on me.")
 						quit()
@@ -249,7 +248,7 @@ def check_results(submitted, questions):
 		# try:
 		while True:
 			cs()
-			prin("\n+ Question "+str(f)+":\n\""+submitted["q"+str(f)]+"\"\n")
+			prin("+ Question "+str(f)+":\n\""+submitted["q"+str(f)]+"\"\n")
 			slp(.5)
 			prin("+ Example correct response:\n\""+submitted["a"+str(f)]+"\"\n")
 			slp(.5)
@@ -269,7 +268,7 @@ def check_results(submitted, questions):
 				i += 1
 				break
 			elif ans != "":
-				print("\n\nPlease select 'y' or 'n'\n")
+				print("Please select 'y' or 'n'\n")
 				slp(2)
 		f += 1
 		cs()
@@ -283,23 +282,23 @@ def display_results(correct_ans, cor_ans, inc_ans, questions):
 	percentage = (z/int(n_questions))*100
 	total_percent.append(percentage)
 	num_of_tests += 1
-	prin("\nLet's check your results...")
+	prin("Let's check your results...")
 	slp(1)
 	if percentage == 100:
 		prin("That's amazing! You answered 100% of the questions correctly!")
 		slp(1)
-		prin("You can start immediately, no doubt about that. Be here in 1hr ready to hack some big corporations... And serve me some coffee, of course...")
+		prin("You can start immediately, no doubt about that. Be here in 1hr ready to hack some big corporations... And serve me some coffee, of course...\n")
 	elif percentage >= 50 and percentage < 80:
 		prin("I feel like this isn't going to work out... It's not you, it's us...")
 		slp(1)
-		prin(f"Actually, to be honest, our standards require someone that can get more correct answers than that, and you only got {percentage:.2f}% correct.")
+		prin(f"Actually, to be honest, our standards require someone that can get more correct answers than that, and you only got {percentage:.2f}% correct.\n")
 	elif percentage < 50:
-		prin(f"I don't get paid enough for this. Just waisted my precious time for {percentage:.2f}%? Sorry but this job ain't for you.")
+		prin(f"I don't get paid enough for this. Just waisted my precious time for {percentage:.2f}%? Sorry but this job ain't for you.\n")
 	else:
-		prin(f"That was actually pretty good. You got {percentage:.2f}% correct! The final decision doesn't depend on me unfortunately, but I'll definitely let my superiors know how good you went!")
+		prin(f"That was actually pretty good. You got {percentage:.2f}% correct! The final decision doesn't depend on me unfortunately, but I'll definitely let my superiors know how good you went!\n")
 	while True:
 		try:
-			choice = input("\nWhat would you like to do now?\n1. Another interview\n2. Check correct questions\n3. Check wrong questions\n4. Check example correct answers (For wrong answers only)\n5. Check total result until now\n6. Leave\n\n")
+			choice = input("What would you like to do now?\n1. Another interview\n2. Check correct questions\n3. Check wrong questions\n4. Check example correct answers (For failed questions only)\n5. Check total result until now\n6. Leave\n\n")
 			choice = int(choice)
 			if choice == 1:
 				start_test(questions)
@@ -307,7 +306,7 @@ def display_results(correct_ans, cor_ans, inc_ans, questions):
 				cs()
 				l = 1
 				for a in range(z):
-					prin("\n\n"+str(l)+": "+cor_ans["q"+str(l)]+"\n\n")
+					prin(str(l)+": "+cor_ans["q"+str(l)]+"\n\n")
 					prin(cor_ans["a"+str(l)])
 					l += 1
 					slp(1)
@@ -316,14 +315,14 @@ def display_results(correct_ans, cor_ans, inc_ans, questions):
 			elif choice == 3:
 				cs()
 				if int(n_questions) - z == 0:
-					prin("\n But you didn't get any wrong!")
+					prin("But you didn't get any wrong!")
 					slp(1)
 					w()
 					cs()
 				else:
 					l = 1
 					for a in range(int(n_questions) - z):
-						prin("\n\n"+str(l)+": " + inc_ans["q" + str(l)] + "\n\n")
+						prin(str(l)+": " + inc_ans["q" + str(l)] + "\n\n")
 						prin(inc_ans["a" + str(l)])
 						l += 1
 						slp(1)
@@ -333,7 +332,7 @@ def display_results(correct_ans, cor_ans, inc_ans, questions):
 				cs()
 				l = 1
 				for a in range(int(n_questions) - z):
-					prin("\n\n"+str(l)+": " + inc_ans["q" + str(l)] + "\n\n")
+					prin(str(l)+": " + inc_ans["q" + str(l)] + "\n\n")
 					prin(inc_ans["e" + str(l)])
 					l += 1
 					slp(1)
@@ -343,27 +342,27 @@ def display_results(correct_ans, cor_ans, inc_ans, questions):
 				cs()
 				if num_of_tests < 2:
 					m_percent = statistics.median(total_percent)
-					prin(f"\nSo far you have done only one interview, and you got {m_percent:.2f}% correct")
+					prin(f"So far you have done only one interview, and you got {m_percent:.2f}% correct")
 					w()
 					cs()
 				else:
 					m_percent = statistics.median(total_percent)
-					prin(f"\nIn total, you have gone through {num_of_tests} interviews and answered {m_percent:.2f}% of all questions correctly")
+					prin(f"In total, you have gone through {num_of_tests} interviews and answered {m_percent:.2f}% of all questions correctly")
 					slp(1)
 					w()
 					cs()
 			elif choice == 6:
 				cs()
-				prin(f"\nOk! Just don't forget: No matter your results, being a {pro} is a life long journey of studying and self improvement. So go study some more!")
+				prin(f"Ok! Just don't forget: No matter your results, being a {pro} is a life long journey of studying and self improvement. So go study some more!")
 				slp(2)
 				quit()
 			else:
 				cs()
-				prin("\n\n1There are more people I need to interview today. Select a valid answer already. '1-5'")
+				prin("There are more people I need to interview today. Select a valid answer already. '1-5'")
 				slp(2)
 		except ValueError:
 			cs()
-			prin("\n2There are more people I need to interview today. Select a valid answer already. '1-5'")
+			prin("There are more people I need to interview today. Select a valid answer already. '1-5'")
 			slp(2)
 
 def cs():
@@ -407,7 +406,7 @@ max = ""
 interviewer = random.choice(names)
 hak_tips = open("hacking_protips.txt").read()
 h_tips = random.choice(hak_tips.splitlines())
-gen_tips = open("int_tips.txt").read()
+gen_tips = open("tips.txt").read()
 tips = random.choice(gen_tips.splitlines())
 #Start of Program
 try:
