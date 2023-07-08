@@ -1,6 +1,6 @@
 # The Gate Keepers Game
 
-This is a simple mock interview game that I created to help me practice for my first job as a penetration tester. I hope it can also assist others who are aspiring to start their career or even ethical hackers applying for a different company. Please keep in mind that I'm not a professional developer, so the code may not be perfect. This was my very first program, and it helped me practice my basic Python skills.
+This is a simple interview game that I created to help me practice for my first job as a penetration tester. I hope it can also assist others who are aspiring to start their career or just help in applying for a different company. Please keep in mind that I'm not a professional developer, so the code may not be perfect. This was my very first program, and it helped me practice my basic Python skills.
 
 ## Purpose
 
@@ -9,7 +9,9 @@ Remember: Don't be afraid to apply for a job you feel unqualified for – you mi
 
 ## Usage
 
-I plan on adding more roles and questions to the game in the future. Meanwhile, you have the option to add a custom role when starting the game. You will be prompted to provide the name of the file containing questions and answers. Make sure the Q&A file is located in the same directory as the `TheGateKeeper.py` script. The file should follow the following syntax:
+Just clone the repository using `git clone https://github.com/MosquitoHunt3r/TheGateKeepers.git` and run `python3 TheGateKeepers.py` from within the cloned directory.
+
+I plan on adding more roles and questions to the game in the future. Meanwhile, you have the option to add a custom role when starting the game. You will be prompted to provide the name of the file containing questions and answers. Make sure the Q&A file is located in the same directory as the `TheGateKeepers.py` script. The file should follow the following syntax:
 
 	[question][? or .]:[answer]
 
