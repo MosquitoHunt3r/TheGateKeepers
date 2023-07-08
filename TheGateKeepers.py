@@ -395,7 +395,7 @@ def prin(*args, **kwargs):
 slp = time.sleep
 num_of_tests = 0
 total_percent = []
-names = ["Heath Aldams", "IddSec", "Alexis Alhmmod", "David Bombon", "John Hammock", "Offline Overflow", "Worknet Chuck", "Shannon Codemorse", "Stoked Fredrik", "Chris Greering", "Nah Amsec", "Zaid Z"]
+names = ["Heath Aldams", "IddSec", "Alexis Alhmmod", "David Bombon", "John Hammock", "Offline Overflow", "Worknet Chuck", "Shannon Codemorse", "Stoked Fredrik", "Chris Greering", "Nah Amsec", "Zaid Z", "Jazon Haddox", "Ryan 0night"]
 users = ["Alan Smithee", "Satoshi Nakamoto", "Unknown Soldier", "Jane Doe", "John Doe", "Patient Zero", "Publius"]
 name = ""
 fake = ""
